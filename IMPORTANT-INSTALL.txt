@@ -1,0 +1,5 @@
+**INSTALLATION**
+
+This mod uses a tool called "Mood Posing Tool", which requires you to replace to /renpy and /lib folders with the one in this archive. The easiest way to do this is to drag and drop EVERY folder in this zip and select "Overwrite" or "Replace".
+
+If you encounter any problems, message me @noahsmyth#6969 on Discord
