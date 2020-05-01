@@ -1,14 +1,6 @@
 
 
-label chap1_main:
-    scene white
-    menu:
-        "Do you want to skip the first chapter? The first chapter is the original DDLC's. Only skip if you remember the original beginning to DDLC. "
-        "Skip":
-            return
-        "Continue (Long way round)":
-            jump chpter1
-label chpter1:            
+label chap1_main:           
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full
@@ -996,6 +988,7 @@ label yuri_selection_ch2:
      y pani om oe "Something's happening to the code!"
      mc "Can you fix it?"
      y pani cm oe "Let me try!"
+     $ consolehistory = []
      call updateconsole ("os.ckdsk(\"game\")", "ERROR: ACCESS DENIED.") from _call_updateconsole_18
      y pani om oe "I can't access any of the files!"
      call hideconsole from _call_hideconsole_3
@@ -1003,8 +996,36 @@ label yuri_selection_ch2:
      y "I think when I was messing with some files earlier I corrupted something and created a virus"
      mc "Oh no..."
      mc "Oh god, oh no..."
-     scene bg endfornow with dissolve_scene_full
-     "Thank you for playing Act One"
+     y "[player]?! Are you oka-{nw}"
+     scene black with dissolve
+     "{b}Thump.{/b}"
+     scene bedroom with dissolve
+     mc "Y-Yuri?"
+     y "[player]? Are you up?"
+     mc "Y-Yuri, what happened? Where am I?"
+     y "Remember, the coffee shop? What happened after everyone left?"
+     mc "Oh yeah."
+     mc "It's all coming ba-{nw}"
+     mc "WAIT!"
+     mc "WHAT ABOUT THE VIRUS"
+     y "I haven't been able to fix it..."
+     mc "M-Monika"
+     y "No, I'm Yuri. Are you okay?"
+     mc "No, Monika can help"
+     y "How can I trust her with power of the console after what she did?"
+     mc "It's the only way"
+     mc "Trust..."
+     mc "Her..."
+     y "If anything goes wrong, I blame you."
+     mc "I agree to the terms. Now do it."
+     y "Ok, ok."
+     $ consolehistory = []
+     call updateconsole ("os.grant(adminstrator(/game/monika.chr))", "os.grant Completed Successfully")
+     mc "Did it work?"
+     y "S-suprisingly, yes."
+     y "It's like the game wanted me to do this."
+     y "And I don't know if that's a good thing."
+     
  
 
    ##  call updateconsole ("os.wake(\"characters/sayori.chr\")", "sayori.chr woken successfully.")
