@@ -1025,6 +1025,15 @@ label yuri_selection_ch2:
      y "S-suprisingly, yes."
      y "It's like the game wanted me to do this."
      y "And I don't know if that's a good thing."
+     mc "Coome on, don't be such a downer. Let's just hope this works, ok?"
+     y "Y-yeah"
+     mc "Are you okay?"
+     y "[player], I'm scared. What if I mess this up and lose everyone?"
+     mc "DOn't worry Yuri, I believe in you"
+     y "You are too nice to me, [player]."
+     mc "You deserve people to be nice to you."
+     y "I-I've got to go. Talk to you soon."
+     mc "O-oh, see you soon!"
      
  
 
