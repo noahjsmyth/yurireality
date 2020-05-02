@@ -1,14 +1,6 @@
 
 
-label chap1_main:
-    scene white
-    menu:
-        "Do you want to skip the first chapter? The first chapter is the original DDLC's. Only skip if you remember the original beginning to DDLC. "
-        "Skip":
-            return
-        "Continue (Long way round)":
-            jump chpter1
-label chpter1:            
+label chap1_main:            
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full
@@ -959,7 +951,7 @@ label yuri_selection_ch2:
      show monika forward casual happ cm oe at t42 zorder 3
      show sayori turned casual happ cm oe at t41 zorder 3
      show yuri turned casual happ cm oe at t44 zorder 3
-     show natsuki turned causal happ cm oe at t43 zorder 3 
+     show natsuki turned casual happ cm oe at t43 zorder 3 
      m "This was really fun, I'm glad that we did this"
      y "Yes, I agree"
      n "We should do this again"
