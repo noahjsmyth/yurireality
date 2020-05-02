@@ -588,6 +588,24 @@ label chap1_main:
     "Alright!"
     "I'll just need to make the most of my circumstances, and I'm sure good fortune will find me."
     "And I guess that starts with writing a poem tonight..."
+    stop music
+    define person = Character("???")
+    scene bg notebook-glitch with dissolve_scene_full
+    play music t6r
+    $ style.say_dialogue = style.edited
+    $ _history = False
+    person "This isn't meant to happen."
+    person "What have you done to the game?"
+    person "Why did you do this to me?"
+    person "I'm going to do something wrong"
+    person "And then we'll all be gone"
+    person "Why did you do this?"
+    person "Please get rid of the files"
+    person "I don't want to live like this"
+    person "{cps=50}Please, don't make me suffer{nw}"
+    $ style.say_dialogue = style.normal
+    $ _history = True
+
 
     return
 ##
@@ -595,15 +613,15 @@ label chap1_main:
 ##
 
 label chap2_main:
-    define q = Character("???")
+    
     define teacher = Character("Teacher")
     scene class with wipeleft
     show sayori 1b at t11 zorder 3
     play music t2
     s 1b "[player]? Are you even alive!"
     "I glance up and am extremely startled by Sayori, who looks like she's been here a while"
-    "I keep spacing out and having daymares"
-    "Daymares: Having a scary daydream (Noun)"
+    "I keep spacing out and having scary daydreams"
+
     mc "Oh, um..."
     mc "Hi Sayori."
     s 4q "Hi! Glad to see you're noticing my presence again!"
@@ -764,6 +782,8 @@ label yuri_selection_ch2:
      stop music
      play music t8
      scene residential  with wipeleft
+     play sound vibrate
+     play sound vibrate
      "{i}bzzt. bzzt.{/i}"
      mc "Oh, my phone."
      "I quickly pick it up to see if it's news on what will happen with our school"
@@ -778,7 +798,7 @@ label yuri_selection_ch2:
      stop music
      play music t8
      "My mind floats to the past two days..."
-     "First of joining the literature club"
+     "First of joining the literature club"   
      scene bg house with wipeleft
      "Then of my school basically burning down"
      "And now a sleepover"
@@ -951,7 +971,7 @@ label yuri_selection_ch2:
      show monika forward casual happ cm oe at t42 zorder 3
      show sayori turned casual happ cm oe at t41 zorder 3
      show yuri turned casual happ cm oe at t44 zorder 3
-     show natsuki turned causal happ cm oe at t43 zorder 3 
+     show natsuki turned casual happ cm oe at t43 zorder 3 
      m "This was really fun, I'm glad that we did this"
      y "Yes, I agree"
      n "We should do this again"
@@ -1034,7 +1054,11 @@ label yuri_selection_ch2:
      mc "You deserve people to be nice to you."
      y "I-I've got to go. Talk to you soon."
      mc "O-oh, see you soon!"
-     
+     scene livingroom with wipeleft
+     mc "I can't believe this is happening!"
+     s "[player]?"
+     mc "Sayori! You scared me!"
+
  
 
    ##  call updateconsole ("os.wake(\"characters/sayori.chr\")", "sayori.chr woken successfully.")

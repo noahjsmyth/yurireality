@@ -102,6 +102,7 @@ define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 define audio.alarmfire = "<loop 62.000>mod_assets/firealarmsfx.mp3"
+define audio.vibrate = "mod_assets/vibrate.wav"
 
 
 image coffeeshop = "mod_assets/coffeshop.png"

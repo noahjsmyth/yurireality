@@ -9,7 +9,7 @@
 
 ## A human-readable name of the game. This is used to set the default window
 ## title, and shows up in the interface and error reports.
-define config.developer = "False"
+define config.developer = True
 ## The _() surrounding the string marks it as eligible for translation.
 
 define config.name = "Yuri Reality"
@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "Act One"
+define config.version = "ACT 2 UNFINISHED"
 
 
 ## Text that is placed on the game's about screen. To insert a blank line

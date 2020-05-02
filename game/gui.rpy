@@ -29,7 +29,7 @@ define gui.activate_sound_glitch = "gui/sfx/select_glitch.ogg"
 define gui.accent_color = '#fff'
 
 
-define gui.idle_color = '#fff'
+define gui.idle_color = '#4b4b4b'
 
 
 
@@ -88,8 +88,8 @@ define gui.title_text_size = 38
 
 
 
-define gui.main_menu_background = "menu_bg"
-define gui.game_menu_background = "game_menu_bg"
+define gui.main_menu_background = "menu_bg_new"
+define gui.game_menu_background = "menu_bg_new"
 
 
 define gui.show_name = False
@@ -338,7 +338,7 @@ define gui.unscrollable = "hide"
 
 
 
-define config.history_length = 50
+define config.history_length = 10
 
 
 
@@ -353,7 +353,7 @@ define gui.history_name_xalign = 1.0
 
 
 define gui.history_text_xpos = 170
-define gui.history_text_ypos = 5
+define gui.history_text_ypos = -5
 define gui.history_text_width = 740
 define gui.history_text_xalign = 0.0
 

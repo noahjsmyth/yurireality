@@ -35,20 +35,24 @@ image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign
 image menu_logo:
     "/mod_assets/DDLCModTemplateLogo.png"
     subpixel True
-    xcenter 240
-    ycenter 120
+    xalign 0.5
+    ycenter 200
     zoom 0.60
     menu_logo_move
 
+image menu_bg_new:
+    xalign 0.5
+    yalign 0.5
+    "gui/menu_bg_new.png"
+
 image menu_bg:
-    topleft
     "gui/menu_bg.png"
-    menu_bg_move
+  
 
 image game_menu_bg:
-    topleft
-    "gui/menu_bg.png"
-    menu_bg_loop
+    
+    "gui/menu_bg_new.png"
+    
 
 image menu_fade:
     "white"
@@ -162,7 +166,7 @@ transform menu_bg_loop:
 
 transform menu_logo_move:
     subpixel True
-    yoffset -300
+    yoffset -400
     time 1.925
     easein_bounce 1.5 yoffset 0
 
