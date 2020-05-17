@@ -160,7 +160,7 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-screen say(who, what):
+init -501 screen say(who, what):
     style_prefix "say"
 
     window:
@@ -171,7 +171,12 @@ screen say(who, what):
         if who is not None:
 
             window:
-                style "namebox"
+                if persistent.playthrough == 22:
+                    style "act2NameBox"
+                elif persistent.playthrough == 33:
+                    style "act3NameBox"
+                else: # default namebox
+                    style "namebox"
                 text who id "who"
 
     # If there's a side image, display it above the text. Do not display
@@ -727,11 +732,17 @@ screen game_menu(title, scroll=None):
     style_prefix "game_menu"
 
     
-
+  
     frame:
         style "game_menu_outer_frame"
-        background "gui/overlay/game_menu.png"
-
+        if persistent.playthrough == 22:
+            background "gui/overlay/game_menu2.png"
+        elif persistent.playthrough == 33:        
+            background "gui/overlay/game_menu3.png"
+        elif persistent.playthrough == 44:
+            background "gui/overlay/game_menu.png"
+        else:
+            background "gui/overlay/game_menu.png"
     
     
 
@@ -838,7 +849,7 @@ style game_menu_label_text:
     size gui.title_text_size
     color "#fff"
     outlines [(6, "#7e7e7e", 0, 0), (3, "#7e7e7e", 2, 2)]
-    top_margin 0
+    
 
 style return_button:
     xpos gui.navigation_xpos

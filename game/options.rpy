@@ -59,7 +59,7 @@ define config.has_voice = False
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = audio.t1
+define config.main_menu_music = audio.tsn
 
 
 ## Transitions #################################################################
@@ -145,7 +145,7 @@ define config.save_directory = "YuriReality"
 
 ## The icon displayed on the taskbar or dock.
 
-define config.window_icon = "mod_assets/rsz_image.png"
+define config.window_icon = "mod_assets/misc/dockicon.png"
 
 ## Custom configs ##############################################################
 

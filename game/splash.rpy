@@ -15,13 +15,13 @@ init -100 python:
 if persistent.playthrough = 240:
     $ config.main_menu_music = "<loop 22.073>bgm/t3g3.ogg"
 else:
-    $ config.main_menu_music = "<loop 22.073>bgm/t1.ogg"
+    $ config.main_menu_music = "<loop 22.073>bgm/tsn.ogg"
 
 
 init python:
     menu_trans_time = 1
     #The default splash message, originally shown in Act 1 and Act 4
-    splash_message_default = "This game is not suitable for children or those who are easily disturbed."
+    splash_message_default = "did you like the splash?"
     #Optional splash messages, originally chosen at random in Act 2 and Act 3
     splash_messages = [
     "Please support Doki Doki Literature Club."
@@ -33,7 +33,7 @@ image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign
 
 ##Here's where you can change the logo file to whatever you want
 image menu_logo:
-    "/mod_assets/DDLCModTemplateLogo.png"
+    "/mod_assets/misc/logo.png"
     subpixel True
     xalign 0.5
     ycenter 200
@@ -136,9 +136,9 @@ image menu_nav:
 
 image menu_particles:
     2.481
-    xpos 224
+    xalign 0.5
     ypos 104
-    ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=20, particleTime=2.0, particleXSpeed=6, particleYSpeed=4).sm
+    ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=50, particleTime=2.0, particleXSpeed=6, particleYSpeed=4).sm
     particle_fadeout
 
 transform particle_fadeout:
@@ -197,9 +197,10 @@ transform menu_art_move(z, x, z2):
 image intro:
     truecenter
     "white"
-    0.5
-    "bg/splash.png" with Dissolve(0.5, alpha=True)
+    "mod_assets/misc/splash_cust.png" with Dissolve(0.5, alpha=True)
     2.5
+    "bg/splash.png" with Dissolve(0.5, alpha=True)
+    3.5
     "white" with Dissolve(0.5, alpha=True)
     0.5
 
@@ -258,12 +259,15 @@ label splashscreen:
     $ config.allow_skipping = False
 
     # Splash screen
+    stop music
+    show white
+    
     show white
     $ persistent.ghost_menu = False #Handling for easter egg from DDLC
     $ splash_message = splash_message_default #Default splash message
     $ renpy.music.play(config.main_menu_music)
     show intro with Dissolve(0.5, alpha=True)
-    pause 2.5
+    pause 5
     hide intro with Dissolve(0.5, alpha=True)
     #You can use random splash messages, as well. By default, they are only shown during certain acts.
     if persistent.playthrough == 2 and renpy.random.randint(0, 3) == 0:

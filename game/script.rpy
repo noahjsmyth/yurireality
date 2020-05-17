@@ -38,6 +38,9 @@ label start:
 
     #yuri glitch selection
     call yuri_selection_ch2 from _call_yuri_selection_ch2
+
+    #act2
+    call act2 from _call_act2
     $ persistent.playthrough = 200
 
     return
