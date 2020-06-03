@@ -4,15 +4,11 @@ Yuri's in control now, does she have what it takes?
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for playing.
+These instructions will get you a copy of the mod up and running on your local machine for playing.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-DDLC Game Files from ddlc.moe
-```
+You will need the original game files for ["Doki Doki Literature Club"](ddlc.moe) on your device to play
 
 ### Installing
 
