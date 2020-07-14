@@ -66,6 +66,8 @@ init python:
 ###################
 ###################
 
+define openeyes = ImageDissolve("mod_assets/misc/openeye.png", 1.5, ramplen=50, alpha=True)
+
 style act2TextBox is window:
     background Image("/gui/act2textbox.png", xalign=0.5, yalign=1.0)
 
@@ -80,6 +82,7 @@ style act3NameBox is namebox:
 
     
 # BGs
+
 image coffeeshop = "mod_assets/bg/coffeeshop.png"
 image livingroom = "mod_assets/bg/livingroom_day.png"
 image livingroom night = "mod_assets/bg/livingroom_nig.png"
@@ -90,6 +93,7 @@ image residential rain = "mod_assets/bg/residential_rai.png"
 image bg schoolfire = "mod_assets/bg/school_fire.png"
 image bg endfornow = "gui/endfornow.png"
 image house night = "mod_assets/bg/house_nig.png"
+image frontdoor = "mod_assets/bg/hallway.png"
 
 # Music
 
@@ -97,7 +101,7 @@ define audio.tsn = "<loop 10.321>mod_assets/music/theme.mp3"
 define audio.creds = "mod_assets/music/s_kill_remix.ogg"
 define audio.alarmfire = "<loop 62.000>mod_assets/music/firealarmsfx.mp3"
 define audio.vibrate = "mod_assets/music/vibrate.wav"
-define audio.creeprev = "<loop 0.00>mod_assets/music/reveal_spooky.ogg"
+define audio.liveforever = "mod_assets/music/lfev.mp3"
 
 # Sprites
 
@@ -107,61 +111,56 @@ image yuri kill oe om shock = "mod_assets/sprites/ykill_oeom_shock.png"
 image yuri knife oe om shock = "mod_assets/sprites/yknife_oeom_shock.png"
 
 # Sienna
-image sienna 1 = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/a.png")
-image sienna 1a = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/a.png")
-image sienna 1b = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/b.png")
-image sienna 1c = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/c.png")
-image sienna 1d = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/d.png")
-image sienna 1e = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/e.png")
-image sienna 1f = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/f.png")
-image sienna 1g = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/g.png")
-image sienna 1h = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/h.png")
-image sienna 1i = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/i.png")
-image sienna 1j = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/j.png")
-image sienna 1k = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/k.png")
-image sienna 1l = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/l.png")
-image sienna 1m = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/m.png")
-image sienna 1n = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/n.png")
-image sienna 1o = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/o.png")
-image sienna 1p = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/p.png")
-image sienna 1q = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/q.png")
-image sienna 1r = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/r.png")
-image sienna 1s = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/s.png")
-image sienna 1t = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/t.png")
-image sienna 1u = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/u.png")
-image sienna 1v = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/v.png")
-image sienna 1w = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/w.png")
-image sienna 1x = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/x.png")
-image sienna 1y = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/y.png")
-image sienna 1z = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/1r.png", (0, 0), "mod_assets/sprites/Sienna/z.png")
+image sienna 1 = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png", (0, 0), "mod_assets/sprites/Sienna/a.png")
+image sienna 1a = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/a.png")
+image sienna 1b = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/b.png")
+image sienna 1c = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/c.png")
+image sienna 1d = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/d.png")
+image sienna 1e = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/e.png")
+image sienna 1f = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/f.png")
+image sienna 1g = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/g.png")
+image sienna 1h = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/h.png")
+image sienna 1i = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/i.png")
+image sienna 1j = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/j.png")
+image sienna 1k = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/k.png")
+image sienna 1l = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/l.png")
+image sienna 1m = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/m.png")
+image sienna 1n = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/n.png")
+image sienna 1o = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/o.png")
+image sienna 1p = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/p.png")
+image sienna 1q = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/q.png")
+image sienna 1r = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/r.png")
+image sienna 1s = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/s.png")
+image sienna 1t = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/t.png")
+image sienna 1u = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/u.png")
+image sienna 1v = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/v.png")
+image sienna 1w = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1.png",  (0, 0), "mod_assets/sprites/Sienna/w.png")
 
-image sienna 2 = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/a.png")
-image sienna 2a = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/a.png")
-image sienna 2b = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/b.png")
-image sienna 2c = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/c.png")
-image sienna 2d = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/d.png")
-image sienna 2e = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/e.png")
-image sienna 2f = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/f.png")
-image sienna 2g = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/g.png")
-image sienna 2h = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/h.png")
-image sienna 2i = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/i.png")
-image sienna 2j = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/j.png")
-image sienna 2k = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/k.png")
-image sienna 2l = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/l.png")
-image sienna 2m = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/m.png")
-image sienna 2n = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/n.png")
-image sienna 2o = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/o.png")
-image sienna 2p = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/p.png")
-image sienna 2q = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/q.png")
-image sienna 2r = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/r.png")
-image sienna 2s = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/s.png")
-image sienna 2t = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/t.png")
-image sienna 2u = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/u.png")
-image sienna 2v = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/v.png")
-image sienna 2w = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/w.png")
-image sienna 2x = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/x.png")
-image sienna 2y = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/y.png")
-image sienna 2z = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2l.png", (0, 0), "mod_assets/sprites/Sienna/2r.png", (0, 0), "mod_assets/sprites/Sienna/z.png")
+
+image sienna 2 = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/a.png")
+image sienna 2a = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/a.png")
+image sienna 2b = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/b.png")
+image sienna 2c = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/c.png")
+image sienna 2d = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/d.png")
+image sienna 2e = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/e.png")
+image sienna 2f = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/f.png")
+image sienna 2g = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/g.png")
+image sienna 2h = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/h.png")
+image sienna 2i = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/i.png")
+image sienna 2j = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/j.png")
+image sienna 2k = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/k.png")
+image sienna 2l = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/l.png")
+image sienna 2m = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/m.png")
+image sienna 2n = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/n.png")
+image sienna 2o = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/o.png")
+image sienna 2p = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/p.png")
+image sienna 2q = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/q.png")
+image sienna 2r = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/r.png")
+image sienna 2s = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/s.png")
+image sienna 2t = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/t.png")
+image sienna 2u = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/u.png")
+image sienna 2v = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/v.png")
+image sienna 2w = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2.png",  (0, 0), "mod_assets/sprites/Sienna/w.png")
 
 
 image sienna 3 = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/3.png", (0, 0), "mod_assets/sprites/Sienna/a.png")
@@ -176,32 +175,30 @@ image sienna 3h = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/3.
 image sienna 3i = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/3.png", (0, 0), "mod_assets/sprites/Sienna/i.png")
 image sienna 3j = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/3.png", (0, 0), "mod_assets/sprites/Sienna/j.png")
 
-image sienna 1ba = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/a.png")
-image sienna 1bb = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/b.png")
-image sienna 1bc = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/c.png")
-image sienna 1bd = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/d.png")
-image sienna 1be = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/e.png")
-image sienna 1bf = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/f.png")
-image sienna 1bg = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/g.png")
-image sienna 1bh = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/h.png")
-image sienna 1bi = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/i.png")
-image sienna 1bj = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/j.png")
-image sienna 1bk = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/k.png")
-image sienna 1bl = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/l.png")
-image sienna 1bm = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/m.png")
-image sienna 1bn = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/n.png")
-image sienna 1bo = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/o.png")
-image sienna 1bp = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/p.png")
-image sienna 1bq = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/q.png")
-image sienna 1br = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/r.png")
-image sienna 1bs = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/s.png")
-image sienna 1bt = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/t.png")
-image sienna 1bu = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/u.png")
-image sienna 1bv = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/v.png")
-image sienna 1bw = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/w.png")
-image sienna 1bx = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/x.png")
-image sienna 1by = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/y.png")
-image sienna 1bz = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1bl.png", (0, 0), "mod_assets/sprites/Sienna/1br.png", (0, 0), "mod_assets/sprites/Sienna/z.png")
+image sienna 1ba = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/a.png")
+image sienna 1bb = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/b.png")
+image sienna 1bc = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png", (0, 0), "mod_assets/sprites/Sienna/c.png")
+image sienna 1bd = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/d.png")
+image sienna 1be = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/e.png")
+image sienna 1bf = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/f.png")
+image sienna 1bg = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/g.png")
+image sienna 1bh = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/h.png")
+image sienna 1bi = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/i.png")
+image sienna 1bj = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/j.png")
+image sienna 1bk = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/k.png")
+image sienna 1bl = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/l.png")
+image sienna 1bm = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/m.png")
+image sienna 1bn = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/n.png")
+image sienna 1bo = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/o.png")
+image sienna 1bp = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/p.png")
+image sienna 1bq = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/q.png")
+image sienna 1br = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/r.png")
+image sienna 1bs = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/s.png")
+image sienna 1bt = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/t.png")
+image sienna 1bu = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/u.png")
+image sienna 1bv = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/v.png")
+image sienna 1bw = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/1b.png",  (0, 0), "mod_assets/sprites/Sienna/w.png")
+
 
 image sienna 2ba = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2bl.png", (0, 0), "mod_assets/sprites/Sienna/2br.png", (0, 0), "mod_assets/sprites/Sienna/a.png")
 image sienna 2bb = im.Composite((960, 960), (0, 0), "mod_assets/sprites/Sienna/2bl.png", (0, 0), "mod_assets/sprites/Sienna/2br.png", (0, 0), "mod_assets/sprites/Sienna/b.png")

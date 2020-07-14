@@ -88,8 +88,8 @@ define gui.title_text_size = 38
 
 
 
-define gui.main_menu_background = "menu_bg_new"
-define gui.game_menu_background = "menu_bg_new"
+define gui.main_menu_background = "menu_bg"
+define gui.game_menu_background = "menu_bg"
 
 
 define gui.show_name = False
@@ -396,6 +396,9 @@ define gui.nvl_thought_xalign = 0.0
 
 define gui.nvl_button_xpos = 450
 define gui.nvl_button_xalign = 0.0
+
+define gui.navigation_button_text_xalign = 0.5
+
 
 
 

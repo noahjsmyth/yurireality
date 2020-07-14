@@ -1,58 +1,45 @@
-## This splash screen is the first thing that Renpy will show the player
-##
-## Before load, check to be sure that the archive files were found.
-## If not, display an error message and quit.
+## Splash.rpy
+
 init -100 python:
-    #Check for each archive needed
-    for archive in ['audio','images','scripts','fonts']:
-        if not archive in config.archives:
-            #If one is missing, throw an error and chlose
-            renpy.error("DDLC archive files not found in /game folder. Check installation and try again.")
 
-## First, a disclaimer declaring this is a mod is shown, then there is a
-## check for the original DDLC assets in the install folder. If those are
-## not found, the player is directed to the developer's site to download.
-if persistent.playthrough = 240:
-    $ config.main_menu_music = "<loop 22.073>bgm/t3g3.ogg"
-else:
-    $ config.main_menu_music = "<loop 22.073>bgm/tsn.ogg"
+    # Checks to see if all of DDLC's files are inside
+    # You may remove 'scripts' if you recieve conflict with scripts.rpa
+    for archive in ['audio','images','fonts']:
+        if archive not in config.archives:
+            renpy.error("DDLC archive files not found in /game folder. Check your installation and try again.")
 
-
+# disclaimers
 init python:
     menu_trans_time = 1
-    #The default splash message, originally shown in Act 1 and Act 4
-    splash_message_default = "did you like the splash?"
-    #Optional splash messages, originally chosen at random in Act 2 and Act 3
+
+    splash_message_default = "This game is an unofficial fan game, unaffiliated with Team Salvato."
+
     splash_messages = [
-    "Please support Doki Doki Literature Club."
-    "Monika is watching you code."
-    "Why not just play already?"
+        "Please support Doki Doki Literature Club.",
+        "Monika is watching you code."
     ]
+
 
 image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign=0.5)
 
-##Here's where you can change the logo file to whatever you want
+# Main Menu Images
 image menu_logo:
     "/mod_assets/misc/logo.png"
     subpixel True
-    xalign 0.5
-    ycenter 200
+    xalign 0.97
+    ycenter 140
     zoom 0.60
     menu_logo_move
 
-image menu_bg_new:
-    xalign 0.5
-    yalign 0.5
-    "gui/menu_bg_new.png"
-
 image menu_bg:
+    topleft
     "gui/menu_bg.png"
-  
+    menu_bg_move
 
 image game_menu_bg:
-    
-    "gui/menu_bg_new.png"
-    
+    topleft
+    "gui/menu_bg.png"
+    menu_bg_loop
 
 image menu_fade:
     "white"
@@ -60,36 +47,37 @@ image menu_fade:
 
 image menu_art_y:
     subpixel True
-    "gui/menu_art_y.png"
-    xcenter 620
-    ycenter 675
-    zoom 1
-    menu_art_move(1.00, 1000, 1.00)
+    "gui/menu_art_m.png"
+    xpos 260
+    ycenter 335
+    zoom 0.60
+    menu_art_move(0.54, 390, 0.60)
 
 image menu_art_n:
     subpixel True
     "gui/menu_art_n.png"
-    xcenter 750
+    xpos 445
     ycenter 385
     zoom 0.58
-    menu_art_move(0.58, 750, 0.58)
+    menu_art_move(0.58, 600, 0.58)
 
 image menu_art_s:
     subpixel True
     "gui/menu_art_s.png"
-    xcenter 510
+    xpos 150
     ycenter 500
     zoom 0.68
-    menu_art_move(0.68, 510, 0.68)
+    menu_art_move(0.68, 265, 0.68)
 
 image menu_art_m:
     subpixel True
-    "gui/menu_art_m.png"
-    xcenter 600
-    ycenter 335
+    "gui/menu_art_y.png"
+    xpos 480
+    ycenter 640
     zoom 1.00
-    menu_art_move(0.54, 600, 0.60)
+    menu_art_move(1.00, 850, 1.00)
 
+# Ghost Main Menu Images
 image menu_art_y_ghost:
     subpixel True
     "gui/menu_art_y_ghost.png"
@@ -122,6 +110,7 @@ image menu_art_m_ghost:
     zoom 1.00
     menu_art_move(1.00, 1000, 1.00)
 
+# Sayori Image After Game 1st Restart
 image menu_art_s_glitch:
     subpixel True
     "gui/menu_art_s_break.png"
@@ -134,11 +123,13 @@ image menu_nav:
     "gui/overlay/main_menu.png"
     menu_nav_move
 
+# Main Menu Effects
+
 image menu_particles:
     2.481
-    xalign 0.5
+    xpos 224
     ypos 104
-    ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=50, particleTime=2.0, particleXSpeed=6, particleYSpeed=4).sm
+    ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=40, particleTime=2.0, particleXSpeed=3, particleYSpeed=3).sm
     particle_fadeout
 
 transform particle_fadeout:
@@ -166,13 +157,13 @@ transform menu_bg_loop:
 
 transform menu_logo_move:
     subpixel True
-    yoffset -400
+    yoffset -320
     time 1.925
     easein_bounce 1.5 yoffset 0
 
 transform menu_nav_move:
     subpixel True
-    xoffset -500
+    xoffset 500
     time 1.5
     easein_quint 1 xoffset 0
 
@@ -194,15 +185,20 @@ transform menu_art_move(z, x, z2):
         pause 0.75
         ease 1.5 zoom z2 xoffset 0
 
+# Team Salvato Splash Screen
+
 image intro:
     truecenter
     "white"
-    "mod_assets/misc/splash_cust.png" with Dissolve(0.5, alpha=True)
-    2.5
+    0.5
     "bg/splash.png" with Dissolve(0.5, alpha=True)
-    3.5
+    5.0
+    "mod_assets/misc/splash_cust.png" with Dissolve(0.5, alpha=True)
+    5.0
     "white" with Dissolve(0.5, alpha=True)
     0.5
+
+# Special Mod Message Text
 
 image warning:
     truecenter
@@ -212,97 +208,285 @@ image warning:
     "white" with Dissolve(0.5, alpha=True)
     0.5
 
+# Checks for missing character files
+
+init python:
+    if not persistent.do_not_delete:
+
+        import os
+        try:
+            if not os.access(config.basedir + "/characters/", os.F_OK):
+                os.mkdir(config.basedir + "/characters")
+
+            if persistent.playthrough <= 2:
+                try: renpy.file("../characters/monika.chr")
+                except: open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
+            if persistent.playthrough <= 1 or persistent.playthrough == 4:
+                try: renpy.file("../characters/natsuki.chr")
+                except: open(config.basedir + "/characters/natsuki.chr", "wb").write(renpy.file("natsuki.chr").read())
+                try: renpy.file("../characters/yuri.chr")
+                except: open(config.basedir + "/characters/yuri.chr", "wb").write(renpy.file("yuri.chr").read())
+            if persistent.playthrough == 0 or persistent.playthrough == 4:
+                try: renpy.file("../characters/sayori.chr")
+                except: open(config.basedir + "/characters/sayori.chr", "wb").write(renpy.file("sayori.chr").read())
+
+        except:
+            pass
+
+# Startup Disclaimer Images
 image tos = "bg/warning.png"
 image tos2 = "bg/warning2.png"
 
+# Startup Disclaimer
 
 label splashscreen:
 
-    #If this is the first time the game has been run, show a disclaimer
+    python:
+        process_list = []
+        currentuser = ""
+        if renpy.windows:
+            try:
+                process_list = subprocess.check_output("wmic process get Description", shell=True).lower().replace("\r", "").replace(" ", "").split("\n")
+            except:
+                pass
+            try:
+                for name in ('LOGNAME', 'USER', 'LNAME', 'USERNAME'):
+                    user = os.environ.get(name)
+                    if user:
+                        currentuser = user
+            except:
+                pass
+
+
+    python:
+        firstrun = ""
+        #try:
+            #firstrun = renpy.file("firstrun").read(1)
+        #except:
+            #with open(config.basedir + "/game/firstrun", "wb") as f:
+                #pass
+
+    if not firstrun:
+        if persistent.first_run and (config.version == persistent.oldversion or persistent.autoload == "postcredits_loop"):
+            $ quick_menu = False
+            scene black
+            menu:
+                "A previous save file has been found. Would you like to delete your save data and start over?"
+                "Yes, delete my existing data.":
+                    "Deleting save data...{nw}"
+                    python:
+                        delete_all_saves()
+                        renpy.loadsave.location.unlink_persistent()
+                        renpy.persistent.should_save_persistent = False
+                        renpy.utter_restart()
+                "No, continue where I left off.":
+                    $ restore_relevant_characters()
+
+        #python:
+            #if not firstrun:
+                #try:
+                    #with open(config.basedir + "/game/firstrun", "w") as f:
+                        #f.write("1")
+                #filepath = renpy.file("firstrun").name
+                #open(filepath, "a").close()
+
+    # Sets First Run to False to Show Disclaimer
     default persistent.first_run = False
+
+    # Startup Disclaimer
+
     if not persistent.first_run:
+        python:
+            restore_all_characters()
         $ quick_menu = False
         scene white
         pause 0.5
         scene tos
         with Dissolve(1.0)
         pause 1.0
-        "[config.name] is a Doki Doki Literature Club fan mod that is not affiliated with Team Salvato."
+        "[config.name] is a Doki Doki Literature Club fan mod that is not affiliated in anyway with Team Salvato."
         "It is designed to be played only after the official game has been completed, and contains spoilers for the official game."
-        "Game files for Doki Doki Literature Club are required to play this mod and can be downloaded for free at: http://ddlc.moe"
+        "Game files for Doki Doki Literature Club are required to play this mod and can be downloaded for free at: http://ddlc.moe or on Steam."
         menu:
             "By playing [config.name] you agree that you have completed Doki Doki Literature Club and accept any spoilers contained within."
             "I agree.":
-                pass
+                 pass
+        $ persistent.first_run = True
         scene tos2
         with Dissolve(1.5)
         pause 1.0
-
-        #Optional, load a copy of DDLC save data
-        #call import_ddlc_persistent
-
         scene white
-        with Dissolve(1.5)
 
         $ persistent.first_run = True
 
+    ## Controls where Sayori Kill Early Starts Up
+    # python:
+    #     s_kill_early = None
+    #     if persistent.playthrough == 0:
+    #         try: renpy.file("../characters/sayori.chr")
+    #         except: s_kill_early = True
+    #     if not s_kill_early:
+    #         if persistent.playthrough <= 2 and persistent.playthrough != 0:
+    #             try: renpy.file("../characters/monika.chr")
+    #             except: open(config.basedir + "/characters/monika.chr", "wb").write(renpy.file("monika.chr").read())
+    #         if persistent.playthrough <= 1 or persistent.playthrough == 4:
+    #             try: renpy.file("../characters/natsuki.chr")
+    #             except: open(config.basedir + "/characters/natsuki.chr", "wb").write(renpy.file("natsuki.chr").read())
+    #             try: renpy.file("../characters/yuri.chr")
+    #             except: open(config.basedir + "/characters/yuri.chr", "wb").write(renpy.file("yuri.chr").read())
+    #         if persistent.playthrough == 4:
+    #             try: renpy.file("../characters/sayori.chr")
+    #             except: open(config.basedir + "/characters/sayori.chr", "wb").write(renpy.file("sayori.chr").read())
 
+
+    # Controls Special Poems at random on startup
+    if not persistent.special_poems:
+        python hide:
+            persistent.special_poems = [0,0,0]
+            a = range(1,12)
+            for i in range(3):
+                b = renpy.random.choice(a)
+                persistent.special_poems[i] = b
+                a.remove(b)
 
     $ basedir = config.basedir.replace('\\', '/')
 
-    #autoload handling
-    #Use persistent.autoload if you want to bypass the splashscreen on startup for some reason
-    if persistent.autoload and not _restart:
+    # Controls auto-load of certain scripts
+    if persistent.autoload:
         jump autoload
 
-    # Start splash logic
+    # Team Salvato/Splash Message
+
     $ config.allow_skipping = False
 
-    # Splash screen
-    stop music
+    if persistent.playthrough == 2 and not persistent.seen_ghost_menu and renpy.random.randint(0, 63) == 0:
+        show black
+        $ config.main_menu_music = audio.ghostmenu
+        $ persistent.seen_ghost_menu = True
+        $ persistent.ghost_menu = True
+        $ renpy.music.play(config.main_menu_music)
+        $ pause(1.0)
+        show end with dissolve_cg
+        $ pause(3.0)
+        $ config.allow_skipping = True
+        return
+
+    # if s_kill_early:
+    #     show black
+    #     play music "bgm/s_kill_early.ogg"
+    #     $ pause(1.0)
+    #     show end with dissolve_cg
+    #     $ pause(3.0)
+    #     scene white
+    #     show expression "images/cg/s_kill_early.png":
+    #         yalign -0.05
+    #         xalign 0.25
+    #         dizzy(1.0, 4.0, subpixel=False)
+    #     show white as w2:
+    #         choice:
+    #             ease 0.25 alpha 0.1
+    #         choice:
+    #             ease 0.25 alpha 0.125
+    #         choice:
+    #             ease 0.25 alpha 0.15
+    #         choice:
+    #             ease 0.25 alpha 0.175
+    #         choice:
+    #             ease 0.25 alpha 0.2
+    #         choice:
+    #             ease 0.25 alpha 0.225
+    #         choice:
+    #             ease 0.25 alpha 0.25
+    #         choice:
+    #             ease 0.25 alpha 0.275
+    #         choice:
+    #             ease 0.25 alpha 0.3
+    #         pass
+    #         choice:
+    #             pass
+    #         choice:
+    #             0.25
+    #         choice:
+    #             0.5
+    #         choice:
+    #             0.75
+    #         repeat
+    #     show noise:
+    #         alpha 0.1
+    #     with Dissolve(1.0)
+    #     show expression Text("Now everyone can be happy.", style="sayori_text"):
+    #         xalign 0.8
+    #         yalign 0.5
+    #         alpha 0.0
+    #         600
+    #         linear 60 alpha 0.5
+    #     pause
+    #     $ renpy.quit()
+
     show white
-    
-    show white
-    $ persistent.ghost_menu = False #Handling for easter egg from DDLC
-    $ splash_message = splash_message_default #Default splash message
+    $ persistent.ghost_menu = False
+    $ splash_message = splash_message_default
+    $ config.main_menu_music = audio.tsn
     $ renpy.music.play(config.main_menu_music)
+    $ starttime = datetime.datetime.now()
     show intro with Dissolve(0.5, alpha=True)
-    pause 5
-    hide intro with Dissolve(0.5, alpha=True)
-    #You can use random splash messages, as well. By default, they are only shown during certain acts.
-    if persistent.playthrough == 2 and renpy.random.randint(0, 3) == 0:
-        $ splash_message = renpy.random.choice(splash_messages)
-    show splash_warning "[splash_message]" with Dissolve(0.5, alpha=True)
-    pause 2.0
-    hide splash_warning with Dissolve(0.5, alpha=True)
+    $ pause(11.0 - (datetime.datetime.now() - starttime).total_seconds())
+    hide intro with Dissolve(max(0, 3.5 - (datetime.datetime.now() - starttime).total_seconds()), alpha=True)
+    
+    $ pause(6.5 - (datetime.datetime.now() - starttime).total_seconds())
     $ config.allow_skipping = True
     return
 
+# Warning Screen
 label warningscreen:
     hide intro
     show warning
     pause 3.0
 
+## If Sayori.chr is deleted, this would play
+## From Script-CH0.rpy
+# label ch0_kill:
+#     $ s_name = "Sayori"
+#     show sayori 1b zorder 2 at t11
+#     s "..."
+#     s "..."
+#     s "W-What..."
+#     s 1g "..."
+#     s "This..."
+#     s "What is this...?"
+#     s "Oh no..."
+#     s 1u "No..."
+#     s "This can't be it."
+#     s "This can't be all there is."
+#     s 4w "What is this?"
+#     s "What am I?"
+#     s "Make it stop!"
+#     s "PLEASE MAKE IT STOP!"
+
+#     $ delete_character("sayori")
+#     $ delete_character("natsuki")
+#     $ delete_character("yuri")
+#     $ delete_character("monika")
+#     $ renpy.quit()
+#     return
+
 label after_load:
     $ config.allow_skipping = allow_skipping
     $ _dismiss_pause = config.developer
-    $ persistent.ghost_menu = False #Handling for easter egg from DDLC
+    $ persistent.ghost_menu = False
     $ style.say_dialogue = style.normal
-    #Check if the save has been tampered with
+
     if anticheat != persistent.anticheat:
         stop music
         scene black
         "The save file could not be loaded."
         "Are you trying to cheat?"
-        #Handle however you want, default is to force reset all save data
+
         $ renpy.utter_restart()
     return
 
-
-
 label autoload:
     python:
-        # Stuff that's normally done after splash
         if "_old_game_menu_screen" in globals():
             _game_menu_screen = _old_game_menu_screen
             del _old_game_menu_screen
@@ -311,15 +495,23 @@ label autoload:
             del _old_history
         renpy.block_rollback()
 
-        # Fix the game context (normally done when loading save file)
         renpy.context()._menu = False
         renpy.context()._main_menu = False
         main_menu = False
         _in_replay = None
 
-    # Pop the _splashscreen label which has _confirm_quit as False and other stuff
     $ renpy.pop_call()
     jump expression persistent.autoload
 
+label before_main_menu:
+    $ config.main_menu_music = audio.tsn
+    return
+
 label quit:
+    if persistent.ghost_menu:
+        hide screen main_menu
+        scene white
+        show expression "gui/menu_art_m_ghost.png":
+            xpos -100 ypos -100 zoom 3.5
+        pause 0.01
     return

@@ -30,18 +30,8 @@ label start:
     # call example script
     $ preferences.text_cps = 50
    #chapter 1
-    call chap1_main from _call_chap1_main
+    call day1_main
 
-
-    #chapter 2
-    call chap2_main from _call_chap2_main
-
-    #yuri glitch selection
-    call yuri_selection_ch2 from _call_yuri_selection_ch2
-
-    #act2
-    call act2 from _call_act2
-    $ persistent.playthrough = 200
 
     return
 
