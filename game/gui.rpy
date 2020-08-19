@@ -110,8 +110,8 @@ define gui.textbox_yalign = 0.99
 
 
 
-define gui.name_xpos = 350
-define gui.name_ypos = -3
+define gui.name_xpos = 310
+define gui.name_ypos = 31
 
 
 

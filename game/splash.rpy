@@ -12,7 +12,7 @@ init -100 python:
 init python:
     menu_trans_time = 1
 
-    splash_message_default = "This game is an unofficial fan game, unaffiliated with Team Salvato."
+    splash_message_default = "Nothing is as it seems."
 
     splash_messages = [
         "Please support Doki Doki Literature Club.",
@@ -26,15 +26,16 @@ image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign
 image menu_logo:
     "/mod_assets/misc/logo.png"
     subpixel True
-    xalign 0.97
-    ycenter 140
+    xalign 0.98
+    ycenter 170
     zoom 0.60
     menu_logo_move
 
 image menu_bg:
     topleft
-    "gui/menu_bg.png"
+    "gui/menu_bg_new.png"
     menu_bg_move
+    
 
 image game_menu_bg:
     topleft
@@ -47,25 +48,25 @@ image menu_fade:
 
 image menu_art_y:
     subpixel True
-    "gui/menu_art_m.png"
+    "gui/menu_art_n.png"
     xpos 260
-    ycenter 335
-    zoom 0.60
+    ycenter 390
+    zoom 0.54
     menu_art_move(0.54, 390, 0.60)
 
 image menu_art_n:
     subpixel True
-    "gui/menu_art_n.png"
+    "gui/menu_art_m.png"
     xpos 445
-    ycenter 385
-    zoom 0.58
+    ycenter 340
+    zoom 0.52
     menu_art_move(0.58, 600, 0.58)
 
 image menu_art_s:
     subpixel True
     "gui/menu_art_s.png"
-    xpos 150
-    ycenter 500
+    xpos 125
+    ycenter 460
     zoom 0.68
     menu_art_move(0.68, 265, 0.68)
 
@@ -192,9 +193,9 @@ image intro:
     "white"
     0.5
     "bg/splash.png" with Dissolve(0.5, alpha=True)
-    5.0
+    2.5
     "mod_assets/misc/splash_cust.png" with Dissolve(0.5, alpha=True)
-    5.0
+    2.5
     "white" with Dissolve(0.5, alpha=True)
     0.5
 
@@ -430,7 +431,7 @@ label splashscreen:
     $ renpy.music.play(config.main_menu_music)
     $ starttime = datetime.datetime.now()
     show intro with Dissolve(0.5, alpha=True)
-    $ pause(11.0 - (datetime.datetime.now() - starttime).total_seconds())
+    $ pause(6.0 - (datetime.datetime.now() - starttime).total_seconds())
     hide intro with Dissolve(max(0, 3.5 - (datetime.datetime.now() - starttime).total_seconds()), alpha=True)
     
     $ pause(6.5 - (datetime.datetime.now() - starttime).total_seconds())
